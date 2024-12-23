@@ -16,9 +16,9 @@ const {
 const app = express();
 const PORT =  8000;
 
-mongoose
-  .connect("mongodb://localhost:27017/BLOGIFY")
-  .then((e) => console.log("MongoDB Connected"));
+mongoose.connect("mongodb+srv://anish:anuj@cluster0.5liuasb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  .then((e) => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB connection error: ", err));
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
